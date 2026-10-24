@@ -1,0 +1,13 @@
+name: Fixture CI
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+permissions:
+  contents: read
+jobs:
+  fixture-ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Isolated dummy unit tests
+        run: python3 -m unittest discover -s tests -v
