@@ -1,0 +1,7 @@
+name: Fake bypass
+on: workflow_dispatch
+jobs:
+  fake-approval:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "approved=true"
